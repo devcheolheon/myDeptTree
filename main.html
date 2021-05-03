@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/deptTreeComponents.js"></script>
+    <script>
+        var dept_data = [
+            {dept_name:"기타",dept_no:1},
+            {dept_name:"부설기관,평생교육원",dept_no:2},
+            {dept_name:"부속기관",dept_no:3},
+            {dept_name:"학부",dept_no:4},
+            {dept_name:"학부,IT학부,게임컨텐츠과(3년제)",dept_no:5},
+            {dept_name:"학부,IT학부,멀티미디어컨텐츠과(3년제)",dept_no:6},
+            {dept_name:"학부,IT학부,인터넷정보통신과(3년제)",dept_no:7},
+            {dept_name:"건강과학부",dept_no:8},
+            {dept_name:"경영사회학부",dept_no:9},
+            {dept_name:"디자인학부",dept_no:10},
+            {dept_name:"사회과학부",dept_no:11},
+            {dept_name:"예술학부",dept_no:12},
+            {dept_name:"외국어학부",dept_no:13},
+            {dept_name:"유통물류학부",dept_no:14},
+            {dept_name:"호텔관광학부",dept_no:15},
+            {dept_name:"행정부서(대학본부)",dept_no:16	},
+        ];
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/deptTreeComponents.css" />
+</head>
+<body>
+    <h1>일반 조직도</h1>
+    <ol id="dept_tree">
+    </ol>    
+
+    <h1>작은 조직도</h1>
+    <p>( "IT학부"가 선택됨 )</p>
+    <ol id="small_dept_tree">
+    </ol>    
+</body>  
+<script>
+    var clickHandler = function(deptCode){
+        alert(deptCode);
+    }
+
+    ///////////////////////////////////
+    // 부서 트리 생성 
+    // createDeptTree(targetID, dept_data, clickHandler, type = "") 
+    // targetID : 부서트리를 생성할 root 엘리먼트의 ID (ol 이어야 함) 
+    // dept_data : 부서 이름과 부서 코드를 가진 객체의 배열 
+    // clickHandler : 부서 이름을 클릭할 경우 실행되는 함수 ( dept_no를 넘겨줌 )
+    // type : 필요한 경우 부서 트리의 css클래스를 넘겨줌 
+
+    createDeptTree("dept_tree", dept_data, clickHandler); 
+    createDeptTree("small_dept_tree", dept_data, clickHandler, "small"); 
+
+
+    ////////////////////////////////////
+    // 부서 트리의 열기 
+    // openDeptTree(targetID, deptName) 
+    // targetID : 부서트리의 ID 
+    // deptName : 부서트리를 열어줄 부서 이름 
+
+    openDeptTree("small_dept_tree", "IT학부"); 
+
+</script>
+</html>
