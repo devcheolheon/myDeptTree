@@ -4,6 +4,9 @@
 
 ## 실행화면 
 
+<p align="center">
+<img width="403" alt="depttree" src="https://user-images.githubusercontent.com/60565660/116844135-30577880-ac1d-11eb-9e0b-d4547fa694e5.png">
+</p>
 
 
 #### 조직 배열의 구조 
